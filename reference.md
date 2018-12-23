@@ -1,0 +1,4 @@
+- [Add new font for ImageMagick on Mac OS X and Ubuntu](http://www.bigbing.net/2016/08/11/add-new-font-imagemagick-mac-osx/)
+- [Add a new font to ImageMagick](https://martin-thoma.com/add-a-new-font-to-imagemagick/)
+- [Reading and Writing CSV Files in Python](https://realpython.com/python-csv)
+- [itchat](https://github.com/littlecodersh/ItChat)
