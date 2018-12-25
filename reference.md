@@ -2,3 +2,8 @@
 - [Add a new font to ImageMagick](https://martin-thoma.com/add-a-new-font-to-imagemagick/)
 - [Reading and Writing CSV Files in Python](https://realpython.com/python-csv)
 - [itchat](https://github.com/littlecodersh/ItChat)
+- [Calling an external comamnd in Python](https://stackoverflow.com/questions/89228/calling-an-external-command-in-python)
+- [后台使用imagemagick的convert命令来处理图片真是太方便了](https://blog.csdn.net/newborn2012/article/details/24964577)
+- [ImageMagick v6 Examples -- Annotating Images](http://www.imagemagick.org/Usage/annotating/#text_position)
+- [ImageMagick v6 Examples -- Text to Image Handling](http://www.imagemagick.org/Usage/text/#label)
+- [Command-line Options @ ImageMagick](http://www.imagemagick.org/script/command-line-options.php#fill)
