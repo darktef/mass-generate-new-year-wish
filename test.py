@@ -3,6 +3,7 @@ import xlsxwriter
 import csv
 import pprint
 import random
+import urllib.request
 
 USER_ATTR = [
     "City",
@@ -80,7 +81,26 @@ def send_christmas_wishes(itchat):
             wish = CHRISTMAS_WISHES[wish_num] % (the_one['RemarkName'] or the_one['NickName'])
             itchat.send(wish, toUserName=the_one['UserName'])
 
+URL_PREFIX = u'https://wx.qq.com/%s'
+FILE_PATH_PREFIX = u'/Users/darktef/Documents/Code/mass-generate-new-year-wish/%s'
+HTTP_HEADER_CONNECTION = ['Connection', 'keep-alive']
+HTTP_HEADER_REFERER = ['Referer', 'https://wx.qq.com/']
+
+def test_head_image(itchat):
+    with open('test.csv', mode='r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for friend in csv_reader:
+            the_one = itchat.search_friends(name=friend['NickName'])[0]
+            request = urllib.request.Request(URL_PREFIX % the_one['HeadImgUrl'])
+            request.add_header(*HTTP_HEADER_CONNECTION)
+            request.add_header(*HTTP_HEADER_REFERER)
+            response = urllib.request.urlopen(request, timeout = 30)
+            data = response.read()
+            response.close()
+            with open(FILE_PATH_PREFIX % the_one['NickName'], mode='wb') as f:
+                f.write(data)
+                f.close()
 
 itchat.auto_login(hotReload=True)
-send_christmas_wishes(itchat)
+test_head_image(itchat)
 
